@@ -1,0 +1,124 @@
+
+        body {
+            background: linear-gradient(rgba(20,15,5,0.8), rgba(20,15,5,0.9)),
+                        url("dubai.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #f5e6c8;
+            font-family: Georgia, serif;
+        }
+
+      .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: rgba(30,20,5,0.95);
+    border-bottom: 1px solid #d4af37;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4af37;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f5e6c8;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.nav-links a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 3px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.book {
+    text-decoration: none;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.create-btn {
+    background: linear-gradient(45deg, #d4af37, #b8860b);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1a1204;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.create-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+       
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-box {
+            background: rgba(40,25,10,0.85);
+            padding: 50px;
+            border-radius: 15px;
+            border: 1px solid #d4af37;
+            box-shadow: 0 0 20px rgba(212,175,55,0.4);
+            max-width: 700px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, #d4af37, #b8860b);
+            border: none;
+            color: #1a1204;
+            font-weight: bold;
+        }
+
+        .btn-outline-gold {
+            border: 1px solid #d4af37;
+            color: #d4af37;
+        }
+
+        .btn-outline-gold:hover {
+            background-color: #d4af37;
+            color: #1a1204;
+        }
+
+        footer {
+            background: rgba(30,20,5,0.95);
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #d4af37;
+            color: #d4af37;
+        }
