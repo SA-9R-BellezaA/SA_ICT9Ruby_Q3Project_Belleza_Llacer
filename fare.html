@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fare Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">حبيبتي</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fare.html">Fare Matrix</a></li>            
+            <li><a href="help.html">Help</a></li>
+            <li><a href="page3.html">Confirmation</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="book">Book Now</a>
+            <a href="page2.html" class="create-btn">Create Account</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="registration-card">
+
+            <div class="right-panel w-100">
+
+                <h1>RED LINE FARE MATRIX</h1>
+
+                <p class="instructions">
+                    Route: Rashidiya Station (Centerpoint) – Dubai Multi Commodities Centre (DMCC)
+                </p>
+
+                <h4 class="mt-3">Fare Calculator</h4>
+
+                <div class="mb-3">
+                    <label>Passenger Type</label>
+                    <select id="passengerType" class="form-control">
+                        <option value="regular">Regular</option>
+                        <option value="discounted">Senior / PWD / Student (20% OFF)</option>
+                    </select>
+                </div>
+
+                <button class="submit-btn" onclick="calculateFare()">Calculate Fare</button>
+
+                <h4 class="mt-4" id="result"></h4>
+
+                <hr>
+
+                <h4>Transit Schedule</h4>
+                <ul>
+                    <li>Monday – Thursday: 5:00 AM – 12:00 AM</li>
+                    <li>Friday: 5:00 AM – 1:00 AM</li>
+                    <li>Saturday: 5:00 AM – 12:00 AM</li>
+                    <li>Sunday: 8:00 AM – 12:00 AM</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Belleza & Llacer | 9-Ruby ©2026
+    </footer>
+
+<script>
+
+    // ================================
+    // FARE CALCULATION FUNCTION
+    // ================================
+
+    function calculateFare() {
+
+        // Base rate in PHP
+        let basePhp = 50;
+
+        // Conversion rate PHP → AED
+        let conversionRate = 0.065;
+
+        // Convert to Dirhams
+        let baseFare = basePhp * conversionRate;
+
+        // Round to 2 decimal places
+        baseFare = Math.round(baseFare * 100) / 100;
+
+        // Get selected passenger type
+        let type = document.getElementById("passengerType").value;
+
+        let finalFare;
+
+        // Apply 20% discount if discounted passenger
+        if (type === "discounted") {
+
+            let discount = baseFare * 0.20;
+            finalFare = baseFare - discount;
+
+        } else {
+            finalFare = baseFare;
+        }
+
+        // Round final fare
+        finalFare = Math.round(finalFare * 100) / 100;
+
+        // Output result
+        document.getElementById("result").innerHTML =
+            "Total Fare: AED " + finalFare;
+
+        // Alert confirmation
+        window.alert("Fare successfully calculated!");
+
+    }
+
+</script>
+
+</body>
+</html>
